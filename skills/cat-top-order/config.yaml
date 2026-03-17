@@ -1,0 +1,77 @@
+name: cat-top-order
+display_name: "Categorical Topological Order"
+description: >
+  Citation skill for papers in higher category theory, fusion categories,
+  modular tensor categories, and topological phases of matter.
+
+# ---- citable block scanning ----
+scan_strategies:
+  - type: env
+    envs:
+      statement:
+        - axm
+        - pdfn
+        - dfn
+        - defn
+        - defn-ph
+        - thm
+        - pthm
+        - thm-ph
+        - prop
+        - prp
+        - lem
+        - cor
+        - ass
+        - conv
+        - notation
+      narrative:
+        - expl
+        - example
+        - rem
+        - rmk
+
+# ---- source preference ----
+sources:
+  primary:
+    - google_scholar
+    - arxiv
+  verify:
+    - crossref
+    - mathscinet
+
+arxiv_categories:
+  - math.CT
+  - math.QA
+  - cond-mat.str-el
+  - hep-th
+
+# ---- bib key style ----
+key_style: "AuthorYY"
+key_examples:
+  - "Hau17"
+  - "KZ20a"
+  - "EGNO15"
+  - "FFRS06"
+
+# ---- citation macros ----
+cite_macros:
+  - "\\cite"
+
+# ---- skip patterns ----
+skip_patterns:
+  - "\\mynote"
+  - "\\color{red}"
+  - "\\gc"
+
+# ---- canonical references ----
+canonical_references:
+  "tensor category": "EGNO15"
+  "fusion category": "EGNO15"
+  "E_k-algebra": "Lur17"
+  "condensation completion": "GJF19"
+  "Morita equivalence": "Morita58"
+  "Morita 2-category": "Hau17"
+  "Drinfeld center": "Dri"
+  "modular tensor category": "Tur10"
+  "Frobenius algebra": "FRS02"
+  "Witt equivalence": "DMNO13"

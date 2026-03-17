@@ -1,0 +1,78 @@
+name: hep-th
+display_name: "High-Energy / String Theory"
+description: >
+  Citation skill for hep-th papers. Uses INSPIRE-HEP as primary source,
+  pattern and section-level scanning instead of theorem environments.
+
+# ---- citable block scanning ----
+scan_strategies:
+  # hep-th papers rarely use theorem environments.
+  # Use pattern + section scanning instead.
+  - type: pattern
+    patterns:
+      - "it is well known that"
+      - "it was shown in"
+      - "it has been shown"
+      - "as proved by"
+      - "as shown by"
+      - "it was conjectured"
+      - "\\gc"
+      - "\\cite{}"
+
+  - type: section
+    sections:
+      - "Review"
+      - "Preliminaries"
+      - "Background"
+      - "Setup"
+
+  # optional: also scan rare theorem envs if present
+  - type: env
+    envs:
+      statement:
+        - theorem
+        - proposition
+        - lemma
+        - corollary
+        - conjecture
+      narrative:
+        - remark
+        - example
+
+# ---- source preference ----
+sources:
+  primary:
+    - inspire_hep
+    - arxiv
+  verify:
+    - crossref
+
+arxiv_categories:
+  - hep-th
+  - hep-ph
+  - gr-qc
+
+# ---- bib key style ----
+key_style: "Author:YYxx"
+key_examples:
+  - "Maldacena:1997re"
+  - "Witten:1988ze"
+  - "Polchinski:1998rq"
+
+# ---- citation macros ----
+cite_macros:
+  - "\\cite"
+  - "\\footnote{\\cite}"
+
+# ---- skip patterns ----
+skip_patterns:
+  - "\\todo"
+  - "FIXME"
+
+# ---- canonical references ----
+canonical_references:
+  "AdS/CFT": "Maldacena:1997re"
+  "gauge/gravity duality": "Aharony:1999ti"
+  "D-branes": "Polchinski:1995mt"
+  "topological field theory": "Witten:1988ze"
+  "conformal bootstrap": "Rattazzi:2008pe"

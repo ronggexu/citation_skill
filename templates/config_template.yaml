@@ -1,0 +1,60 @@
+# Template config — copy and customise for your discipline
+name: my-discipline
+display_name: "My Discipline"
+description: "Brief description of what this skill covers."
+
+# ---- citable block scanning ----
+# Choose which scan strategies to activate.
+scan_strategies:
+  # Strategy 1: LaTeX environments
+  - type: env
+    envs:
+      statement:           # cite in \begin{env}[\cite{Key}]
+        - theorem
+        - definition
+        - proposition
+        - lemma
+        - corollary
+      narrative:           # cite in body text
+        - example
+        - remark
+
+  # Strategy 2: pattern matching (uncomment if needed)
+  # - type: pattern
+  #   patterns:
+  #     - "it is well known that"
+  #     - "it was shown in"
+
+  # Strategy 3: section-level scan (uncomment if needed)
+  # - type: section
+  #   sections:
+  #     - "Review"
+  #     - "Preliminaries"
+
+# ---- source preference ----
+sources:
+  primary:
+    - google_scholar
+    - arxiv
+  verify:
+    - crossref
+
+arxiv_categories:
+  - math.XX
+
+# ---- bib key style ----
+key_style: "AuthorYY"
+key_examples:
+  - "Smith23"
+  - "AB24"
+
+# ---- citation macros ----
+cite_macros:
+  - "\\cite"
+
+# ---- skip patterns ----
+skip_patterns:
+  - "\\todo"
+
+# ---- canonical references ----
+canonical_references: {}
