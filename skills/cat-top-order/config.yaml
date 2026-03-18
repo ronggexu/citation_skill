@@ -1,77 +1,88 @@
 name: cat-top-order
-display_name: "Categorical Topological Order"
+display_name: "Category Theory / Topology / Order Theory"
 description: >
-  Citation skill for papers in higher category theory, fusion categories,
-  modular tensor categories, and topological phases of matter.
+  Citation skill for pure mathematics, especially category theory and topology.
+  Relies heavily on theorem environments and MathSciNet/nLab.
 
 # ---- citable block scanning ----
 scan_strategies:
   - type: env
     envs:
       statement:
-        - axm
-        - pdfn
-        - dfn
-        - defn
-        - defn-ph
+        - theorem
+        - proposition
+        - lemma
+        - corollary
+        - definition
         - thm
-        - pthm
-        - thm-ph
         - prop
-        - prp
         - lem
         - cor
-        - ass
-        - conv
-        - notation
+        - defn
+        - pthm
+        - pprop
+        - pcor
+        - plem
       narrative:
-        - expl
+        - remark
         - example
         - rem
-        - rmk
+        - expl
+
+  - type: pattern
+    patterns:
+      - "by a theorem of"
+      - "it is a classical result that"
+      - "as proved in"
+      - "the notion of"
+      - "we briefly review the theory of"
+      - "recall that"
+      - "by the Morita theory"
+      - "by the Yoneda lemma"
+      - "by the Baez-Dolan cobordism hypothesis"
+      - "\\cite{}"
+
+  - type: section
+    sections:
+      - "Introduction"
+      - "Preliminaries"
+      - "Review"
+      - "Background"
 
 # ---- source preference ----
 sources:
   primary:
-    - google_scholar
-    - arxiv
-  verify:
-    - crossref
     - mathscinet
+    - nlab
+  verify:
+    - arxiv
+    - google_scholar
 
 arxiv_categories:
   - math.CT
+  - math.AT
   - math.QA
-  - cond-mat.str-el
+  - math-ph
   - hep-th
 
 # ---- bib key style ----
-key_style: "AuthorYY"
+key_style: "AuthorYear"
 key_examples:
-  - "Hau17"
-  - "KZ20a"
-  - "EGNO15"
-  - "FFRS06"
+  - "MacLane1998"
+  - "LurieHA"
+  - "Joyal02"
 
 # ---- citation macros ----
 cite_macros:
   - "\\cite"
+  - "\\cite[]"
 
 # ---- skip patterns ----
 skip_patterns:
-  - "\\mynote"
-  - "\\color{red}"
-  - "\\gc"
+  - "\\todo"
+  - "FIXME"
 
 # ---- canonical references ----
 canonical_references:
-  "tensor category": "EGNO15"
-  "fusion category": "EGNO15"
-  "E_k-algebra": "Lur17"
-  "condensation completion": "GJF19"
-  "Morita equivalence": "Morita58"
-  "Morita 2-category": "Hau17"
-  "Drinfeld center": "Dri"
-  "modular tensor category": "Tur10"
-  "Frobenius algebra": "FRS02"
-  "Witt equivalence": "DMNO13"
+  "Higher Algebra": "LurieHA"
+  "Categories for the Working Mathematician": "MacLane1998"

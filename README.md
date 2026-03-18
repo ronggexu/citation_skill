@@ -14,9 +14,10 @@ Each skill follows a shared scaffold but is specialized for the citation convent
 
 ## Usage
 
-1. Copy the desired `skills/<discipline>/` directory into your LaTeX project (e.g. as `Skills/add-citation/`)
-2. The agent reads `SKILL.md` + `config.yaml` and runs the scanner automatically
-3. **Only the final citation diff is presented for your review**
+1. Copy the desired `skills/<discipline>/` directory into your LaTeX project.
+2. The agent reads `SKILL.md` + `config.yaml` and runs the scanner automatically.
+3. **Optional Citations**: Borderline cases (e.g., standard background review) are categorized as Optional (★★★☆☆) so they are not silently discarded.
+4. **Review and Apply**: The final citation diff is presented to the user for review before applying changes to `.tex` and `.bib` files.
 
 ## Architecture
 
