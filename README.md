@@ -2,6 +2,8 @@
 
 A collection of per-discipline **citation-adding skills** for LaTeX manuscripts.
 
+Using these skills, the agent **can automatically scan a manuscript, identify likely missing references, add the corresponding entries to the `.bib` file, and insert citations directly into the `.tex` source.**
+
 Each skill follows a shared scaffold but is specialized for the citation conventions, environment names, source databases, and reference styles of its target research area.
 
 ## Disciplines
